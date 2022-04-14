@@ -21,6 +21,20 @@ router.route('/weather/:weather_id').get(async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+
+const router = express.Router();
+
+router.route('/weather').get(async (req, res) => {
+  try {
+    const result = await db.sequelizeDB.query(dbQuery, {
+      type: sequelize.QueryTypes.SELECT
+    });
+    // eslint-disable-next-line eqeqeq
+    const specificId = result.filter((obj) => obj.weather == req.params.weather);
+    res.json(result);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 export default router;
