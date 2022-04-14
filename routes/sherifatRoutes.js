@@ -16,7 +16,6 @@ router.route('/weather/:weather_id').get(async (req, res) => {
       type: sequelize.QueryTypes.SELECT
     });
     // eslint-disable-next-line eqeqeq
-    const specificId = result.filter((obj) => obj.weather_id == req.params.weather_id);
     res.json(result);
   } catch (err) {
     console.log(err);
