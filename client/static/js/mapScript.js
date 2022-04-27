@@ -45,7 +45,7 @@ function setMapCircles(map, collection) {
 }
 
 async function mainEvent () {
-  const results = await fetch('http://localhost:3000/api/earth_info'); // This accesses some data from our API
+  const results = await fetch('/api/earth_info'); // This accesses some data from our API
 
   const arrayFromJson = await results.json();
   console.log(arrayFromJson);
