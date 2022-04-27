@@ -32,4 +32,5 @@ router.route('/weather').get(async (req, res) => {
     res.json(result);
   } catch (err) {
     console.log(err);
-  });
+  }
+});
