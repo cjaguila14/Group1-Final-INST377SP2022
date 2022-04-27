@@ -4,6 +4,7 @@ import express from 'express';
 import sequelize from 'sequelize';
 
 import db from '../database/initializeDB.js';
+export default router;
 
 const dbQuery = 'SELECT * FROM weather';
 
@@ -15,11 +16,20 @@ router.route('/weather/:weather_id').get(async (req, res) => {
       type: sequelize.QueryTypes.SELECT
     });
     // eslint-disable-next-line eqeqeq
-    const specificId = result.filter((obj) => obj.weather_id == req.params.weather_id);
     res.json(result);
   } catch (err) {
     console.log(err);
-  }
-});
+  };
 
-export default router;
+const router = express.Router();
+
+router.route('/weather').get(async (req, res) => {
+  try {
+    const result = await db.sequelizeDB.query(dbQuery, {
+      type: sequelize.QueryTypes.SELECT
+    });
+    // eslint-disable-next-line eqeqeq
+    res.json(result);
+  } catch (err) {
+    console.log(err);
+  });
