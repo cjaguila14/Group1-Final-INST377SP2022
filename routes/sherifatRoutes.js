@@ -3,9 +3,10 @@
 import express from 'express';
 import sequelize from 'sequelize';
 
-import db from '../database/initializeDB.js';
+import db from '../database/initializeDB';
 
 const dbQuery = 'SELECT * FROM weather';
+
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.route('/weather/:weather_id').get(async (req, res) => {
     res.json(result);
   } catch (err) {
     console.log(err);
-  };
+  });
 
 const router = express.Router();
 

@@ -7,6 +7,9 @@
 
 export default {
   development: {
+    username: 'student',
+    password: 'INST377@UMD',
+    database: 'Dining_Hall_Tracker',
     username: 'ubuntu',
     password: 'Veracrypt@12!',
     database: 'earthquake',
@@ -14,16 +17,16 @@ export default {
     dialect: 'mysql'
   },
   test: {
-    username: 'ubuntu',
-    password: 'Veracrypt@12!',
-    database: 'earthquake',
+    username: 'student',
+    password: 'INST377@UMD',
+    database: 'Dining_Hall_Tracker',
     host: '174.129.198.86',
     dialect: 'mysql'
   },
   production: {
-    username: 'ubuntu',
-    password: 'Veracrypt@12!',
-    database: 'earthquake',
+    username: 'student',
+    password: 'INST377@UMD',
+    database: 'Dining_Hall_Tracker',
     host: '174.129.198.86',
     dialect: 'mysql'
   }
