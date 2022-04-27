@@ -26,8 +26,7 @@ const db = Object.keys(modelList).reduce((collection, modelName) => {
     collection[modelName] = modelList[modelName](sequelizeDB, DataTypes);
   }
   return collection;
- }, 
-});
+}, {});
 
 // const models = sequelizeDB.models;
 // Object.keys(models).map((modelKey) => models[modelKey])
