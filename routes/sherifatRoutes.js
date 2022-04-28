@@ -9,7 +9,7 @@ const dbQuery = 'SELECT * FROM weather';
 
 const router = express.Router();
 
-router.route('/weather/:weather_id').get(async(req, res)  =>  {
+router.route('/weather/:weather_id').get(async(req, res) => {
   try {
     const result = await db.sequelizeDB.query(dbQuery, {
       type: sequelize.QueryTypes.SELECT
