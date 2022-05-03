@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report</title>
+    <!--Applying bulma css for the form for this page-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!--Importing font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Applying a general style and a style specific to this page-->
+    <link rel="stylesheet" href="../static/css/general.css" />
+    <link rel="stylesheet" href="../static/css/styles-home.css" />
+  </head>
+  <body>
+    <div class="menu-container">
+      <header>ILLUSTREMOR</header>
+      <div class="link-container">
+        <a href="../index.html">Home</a>
+        <div>|</div>
+        <a href="./about-page.html">About Us</a>
+        <div>|</div>
+        <a href="./map.html">Map</a>
+        <div>|</div>
+        <a href="./report.html">Report</a>
+        <div>|</div>
+        <a href="./search.html">Search</a>
+        <div>|</div>
+        <a href="./chart.html">Chart</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text-container">
+        <h1>REPORT AN EARTHQUAKE</h1>
+        <p>
+          Fill out this form to submit information about an earthquake that is
+          not yet part of our evergrowing database. We greatly appreciate your
+          submissions. Each submission will be verified for accuracy and be added
+          to our records accordingly.
+        </p>
+      </div>
+
+      <form class="box">
+        <div class="field">
+          <label class="label">Date of Occurence</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="M/D/YYYY" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">City</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Los Angeles" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">State</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="CA" />
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Lattitude</label>
+            <div class="control">
+              <input class="input" type="number" placeholder="-90 - 90" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Longitude</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="-180 - 180" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Magnitude</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="0.0 - 10.0" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Depth</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="0 - 100" />
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-primary is-light">Cancel</button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </body>
+</html>
