@@ -38,7 +38,6 @@ app.get("/earth_info/:id", async(req, res) => {
         result = await db.sequelizeDB.query(dbQuery, {
             type: sequelize.QueryTypes.SELECT
         });
-        console.log(result)
         let filt = result.filter((obj) => {
             return obj.earthquake_id == req.params.id
         })
@@ -50,7 +49,6 @@ app.get("/earth_info/:id", async(req, res) => {
 
 // can try with req.body = {"magnitude": 6.7}
 app.post("/earth_info", async(req, res) => {
-    console.log(req.body)
     try {
         const state = req.body?.state;
         console.log(state);
@@ -66,37 +64,37 @@ app.post("/earth_info", async(req, res) => {
 })
 
 
-// app.put("/earth_info/:id", async(req, res) => {
-//     try {
-//         const mag = req.body ?.magnitude;
-//         const result = await db.sequelizeDB.query(dbQuery, {
-//             type: sequelize.QueryTypes.SELECT
-//         });
-//         const id = result.filter((obj) => {
-//             return obj.earthquake_id == req.params.id
-//         });
-//         id[0].magnitude = mag;
-//         res.send(id)
-//     } catch (err) {
-//         console.log(err);
-//     }
-// })
+app.put("/earth_info/:id", async(req, res) => {
+    try {
+        const mag = req.body ?.magnitude;
+        const result = await db.sequelizeDB.query(dbQuery, {
+            type: sequelize.QueryTypes.SELECT
+        });
+        const id = result.filter((obj) => {
+            return obj.earthquake_id == req.params.id
+        });
+        id[0].magnitude = mag;
+        res.send(id)
+    } catch (err) {
+        console.log(err);
+    }
+})
 
-// app.delete("/earth_info/:id", async(req, res) => {
-//     try {
-//         const result = await db.sequelize.query(dbQuery, {
-//             type: sequelize.QueryTypes.SELECT
-//         });
-//         const id = result.filter((obj) => {
-//             return obj.earthquake_id == req.params.id
-//         })
+app.delete("/earth_info/:id", async(req, res) => {
+    try {
+        const result = await db.sequelize.query(dbQuery, {
+            type: sequelize.QueryTypes.SELECT
+        });
+        const id = result.filter((obj) => {
+            return obj.earthquake_id == req.params.id
+        })
 
-//         delete result[id[0].earthquake_id - 1];
-//         res.send(result)
-//     } catch (err) {
-//         res.send(err)
-//     }
-// })
+        delete result[id[0].earthquake_id - 1];
+        res.send(result)
+    } catch (err) {
+        res.send(err)
+    }
+})
 
 
 export default app;
