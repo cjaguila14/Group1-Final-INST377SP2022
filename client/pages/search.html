@@ -7,29 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
     <link rel="stylesheet" type="text/css" href="../static/css/search.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/general.css">
 </head>
 
 <body>
 
+    <div class="menu-container">
+        <header>ILLUSTREMOR</header>
+        <div class="link-container">
+            <a href="../">Home</a>
+            <div>|</div>
+            <a href="./about-page.html">About Us</a>
+            <div>|</div>
+            <a href="./map.html">Map</a>
+            <div>|</div>
+            <a href="./report.html">Report</a>
+            <div>|</div>
+            <a href="./search.html">Search</a>
+            <div>|</div>
+            <a href="./chart.html">Chart</a>
+        </div>
+    </div>
+
+
     <div class="container">
-
-        <a href="about-page.html">
-            Go Back
-        </a>
-
         <div class="form-container">
             <div id="msg-container" class="hide">
                 <p id="msg">This is the form message</p>
             </div>
-            <form method="GET" id="form">
-                <p>Earthquake</p><br>
-                <input type="text" placeholder="Enter info">
+            <form method="POST" id="form">
+                <p>Earthquake Data Finder</p>
+                <br>
+
+                <select id="states" name="states">
+                    <option value="Select a state">Select a state</option>
+                </select>
+
                 <br>
                 <button type="submit" id="btn">Submit</button>
             </form>
         </div>
 
+        <div class="results-container" id="rc">
+        </div>
+
     </div>
+
+
 
 
 
