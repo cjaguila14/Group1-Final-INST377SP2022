@@ -12,8 +12,12 @@ import db from '../database/initializeDB.js';
 const dbQuery = `SELECT * FROM earthquake.buildings_impacted;`;
 const dbQuery2 = `SELECT * FROM earthquake.buildings_impacted WHERE people_displaced = :people_displaced;`;
 
+const dbQueryStates = `SELECT * FROM earthquake.states;`;
+const dbQueryStatesWithEarthquakes = `SELECT * FROM earthquake.states;`;
+
 const router = express.Router();
 
+// Retrives from buildings_impacted table
 router.route('/building')
   .get(async (req, res) => {
     try {
@@ -90,6 +94,32 @@ router.route('/building/:building_id')
       console.log(err);
       res.send("Server Error");
     }
-  })
+  });
+
+// Retrives from statestable
+router.route('/states')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(dbQueryStates, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+// Retrives from states_with_earthquake table
+router.route('/states_with_earthquake')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(dbQueryStatesWithEarthquakes, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+    }
+  });
 
 export default router;
