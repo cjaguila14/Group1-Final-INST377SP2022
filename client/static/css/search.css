@@ -18,22 +18,19 @@ body {
 
 #form {
     padding: 6px;
-    background-color: lightgray;
     width: 400px;
-    height: 600px;
     min-width: 200px;
 }
 
-input {
-    display: inline-block;
-    padding: 4px;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom: solid black 2px;
-    outline: none;
-    width: 50%;
-    background-color: transparent;
+#form p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.form-container {
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.167);
 }
 
 #btn {
@@ -57,4 +54,48 @@ input {
 #msg-container {
     text-align: center;
     padding: 4px;
+}
+
+#states {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    background-color: transparent;
+    border-left-style: hidden;
+    border-bottom: solid black 2px;
+    font-size: 16px;
+}
+
+.results-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 220px;
+    height: 225px;
+    margin: 8px;
+    background: linear-gradient( to top, rgba(72, 71, 71, 0.754) 0%, rgba(44, 43, 44, 0.254) 84%, gray 20%, rgba(171, 167, 167, 0.612) 100%);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.card p {
+    margin: 4px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
 }
