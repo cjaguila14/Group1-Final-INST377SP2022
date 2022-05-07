@@ -12,6 +12,9 @@
     <!--Applying a general style and a style specific to this page-->
     <link rel="stylesheet" href="../static/css/styles-chart.css" />
     <link rel="stylesheet" href="../static/css/general.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="../static/js/chart.js"></script>
 </head>
 
 <body>
@@ -31,8 +34,17 @@
             <a href="./chart.html">Chart</a>
         </div>
     </div>
-
-    
+    <div class="info-container">
+        <div class="chart-wrapper">
+            <canvas id="chart" height="200"></canvas>
+        </div>  
+        <div class="text-wrapper">
+            <h2>Earthquake Magnitudes</h2>
+            <p>This chart showcases all the recorded earthquakes and visualizes
+                and compares each recorded earthquake in terms of their magnitude.
+            </p>
+        </div>
+    </div>
     
 </body>
 
