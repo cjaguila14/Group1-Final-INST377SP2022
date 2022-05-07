@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable quotes */
 // Daniel M
 import express from 'express';
 import sequelize from 'sequelize';
@@ -31,27 +33,13 @@ app.get('/earth_info', async(req, res) => {
   }
 });
 
-app.get('/earth_info/:id', async(req, res) => {
+app.get("/earth_info/:id", async(req, res) => {
   let result;
   try {
     result = await db.sequelizeDB.query(dbQuery, {
       type: sequelize.QueryTypes.SELECT
     });
-    const filt = result.filter((obj) => obj.earthquake_id === req.params.id);
-    res.send(filt);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-router.get('/earth_info/:id', async(req, res) => {
-  let result;
-  try {
-    result = await db.sequelizeDB.query(dbQuery, {
-      type: sequelize.QueryTypes.SELECT
-    });
-    console.log(result);
-    const filt = result.filter((obj) => obj.earthquake_id === req.params.id);
+    const filt = result.filter((obj) => obj.earthquake_id == req.params.id);
     res.send(filt);
   } catch (err) {
     console.log(err);
@@ -59,7 +47,7 @@ router.get('/earth_info/:id', async(req, res) => {
 });
 
 // can try with req.body = {"magnitude": 6.7}
-app.post('/earth_info', async(req, res) => {
+app.post("/earth_info", async(req, res) => {
   try {
     const state = req.body?.state;
     console.log(state);
@@ -74,13 +62,13 @@ app.post('/earth_info', async(req, res) => {
   }
 });
 
-app.put('/earth_info/:id', async(req, res) => {
+app.put("/earth_info/:id", async(req, res) => {
   try {
     const mag = req.body?.magnitude;
     const result = await db.sequelizeDB.query(dbQuery, {
       type: sequelize.QueryTypes.SELECT
     });
-    const id = result.filter((obj) => obj.earthquake_id === req.params.id);
+    const id = result.filter((obj) => obj.earthquake_id == req.params.id);
     id[0].magnitude = mag;
     res.send(id);
   } catch (err) {
@@ -88,12 +76,12 @@ app.put('/earth_info/:id', async(req, res) => {
   }
 });
 
-app.delete('/earth_info/:id', async(req, res) => {
+app.delete("/earth_info/:id", async(req, res) => {
   try {
     const result = await db.sequelize.query(dbQuery, {
       type: sequelize.QueryTypes.SELECT
     });
-    const id = result.filter((obj) => obj.earthquake_id === req.params.id);
+    const id = result.filter((obj) => obj.earthquake_id == req.params.id);
 
     delete result[id[0].earthquake_id - 1];
     res.send(result);

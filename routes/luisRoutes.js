@@ -96,7 +96,7 @@ router.route('/building/:building_id')
     }
   });
 
-// Retrives from statestable
+// Retrives from states table
 router.route('/states')
   .get(async (req, res) => {
     try {
