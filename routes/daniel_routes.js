@@ -7,8 +7,8 @@ import db from '../database/initializeDB.js';
 
 const app = express.Router();
 
-const dbQuery = 'SELECT * FROM earthquake.earthquake_info;';
-const dbQuery2 = 'SELECT * FROM earthquake.earthquake_info WHERE ROUND(magnitude,2) = :magnitude;';
+const dbQuery = `SELECT * FROM earthquake.earthquake_info;`;
+const dbQuery2 = `SELECT * FROM earthquake.earthquake_info WHERE ROUND(magnitude,2) = :magnitude;`;
 const dbQuery3 = ` 
 SELECT date, latitude, longitude, magnitude, depth, state_name, buildings_impacted.num_home_damaged, buildings_impacted.people_displaced
 FROM earthquake_info
