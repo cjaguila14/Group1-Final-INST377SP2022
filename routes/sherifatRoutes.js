@@ -10,27 +10,27 @@ const dbQuery = 'SELECT * FROM weather';
 const router = express.Router();
 
 router.route('/weather/:weather_id').get(async(req, res) => {
-  try {
-    const result = await db.sequelizeDB.query(dbQuery, {
-      type: sequelize.QueryTypes.SELECT
-    });
-    // eslint-disable-next-line eqeqeq
-    res.json(result);
-  } catch (err) {
-    console.log(err);
-  }
+    try {
+        const result = await db.sequelizeDB.query(dbQuery, {
+            type: sequelize.QueryTypes.SELECT
+        });
+        // eslint-disable-next-line eqeqeq
+        res.json(result);
+    } catch (err) {
+        console.log(err);
+    }
 });
 
-router.route('/weather').get(async (req, res) => {
-  try {
-    const result = await db.sequelizeDB.query(dbQuery, {
-      type: sequelize.QueryTypes.SELECT
-    });
-      // eslint-disable-next-line eqeqeq
-    res.json(result);
-  } catch (err) {
-    console.log(err);
-  }
+router.route('/weather').get(async(req, res) => {
+    try {
+        const result = await db.sequelizeDB.query(dbQuery, {
+            type: sequelize.QueryTypes.SELECT
+        });
+        // eslint-disable-next-line eqeqeq
+        res.json(result);
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 export default router;
