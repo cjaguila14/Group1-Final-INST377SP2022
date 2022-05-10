@@ -7,6 +7,7 @@ const router = express.Router();
 
 const dbQuery = 'SELECT * FROM earthquake.damage_assessment;';
 
+// Retrieves from damage_assesment table
 router.route('/damage')
   .get(async(req, res) => {
     let result;
@@ -27,7 +28,7 @@ router.get('/damage/:id', async(req, res) => {
       type: sequelize.QueryTypes.SELECT
     });
     console.log(result);
-    let filt = result.filter((obj) => obj.damage_id === req.params.id);
+    const filt = result.filter((obj) => obj.damage_id === req.params.id);
     res.send(filt);
   } catch (err) {
     console.log(err);
