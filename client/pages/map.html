@@ -24,6 +24,11 @@
 <body>
     <div class="menu-container">
         <header>ILLUSTREMOR</header>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
         <div class="link-container">
             <a href="../">Home</a>
             <div>|</div>
@@ -51,6 +56,17 @@
         </div>
 
     </div>
+    <script>
+        const btn = document.getElementsByClassName("toggle-button")[0];
+        const links = document.getElementsByClassName("link-container")[0];
+        const menu = document.getElementsByClassName("menu-container")[0];
+  
+        btn.addEventListener("click", () => {
+          console.log("fired");
+          links.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+      </script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    font-family: roboto;
 }
 
 .container {
@@ -98,4 +98,14 @@ body {
 .card:hover {
     transform: scale(1.1);
     transition: transform .2s;
+}
+
+@media (max-width: 810px) {
+    .link-container a {
+        height: 49.5px; 
+       
+    }
+    .link-container {
+        bottom: -12px
+    }
 }
