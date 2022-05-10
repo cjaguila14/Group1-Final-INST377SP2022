@@ -27,3 +27,20 @@ https://stormy-hamlet-33923.herokuapp.com/
 2. Open terminal and type npm start
 3. In browser, go to http://localhost:3000/ 
 4. Start development!
+
+## APIs
+* `/api/earth_info/:id`
+    * GET - returns basic information about all earthquakes recorded in the database. If the id is present, it will return a single earthquake record. 
+    * POST - takes in a state from req body. Returns information about all earthquakes based on the given state
+    * PUT - updates an earthquakes magnitude value
+    * DELETE - deletes an earthquake from the database based on id
+* `/api/weather/:weather_id`
+    * GET - returns weather stats about all earthquakes recorded in the database. If the id is present, it will return a single earthquake record. 
+* `/api/damage/:id`
+    * GET - returns damage stats about all earthquakes recorded in the database. If the id is present, it will return a single earthquake record. 
+* `api/building/:building_id`
+    * GET - returns buildings impacted stats about all earthquakes recorded in the database. If the id is present, it will return a single earthquake record. 
+    * POST - takes in a number of people displaced from req body. Returns information about all earthquakes based on the given number of people displaced. 
+    * PUT - updates an earthquakes number of people displaced value
+    * DELETE - deletes an earthquake record based on an earthquake id.
+    
