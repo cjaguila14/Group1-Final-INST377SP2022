@@ -6,14 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/search.css">
     <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/search.css">
+    
 </head>
 
 <body>
 
     <div class="menu-container">
         <header>ILLUSTREMOR</header>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
         <div class="link-container">
             <a href="../">Home</a>
             <div>|</div>
@@ -52,12 +58,18 @@
         </div>
 
     </div>
-
-
-
-
-
     <script src="../static/js/search.js"></script>
+    <script>
+        const button = document.getElementsByClassName("toggle-button")[0];
+        const links = document.getElementsByClassName("link-container")[0];
+        const menu = document.getElementsByClassName("menu-container")[0];
+  
+        button.addEventListener("click", () => {
+          console.log("fired");
+          links.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+      </script>
 </body>
 
 </html>

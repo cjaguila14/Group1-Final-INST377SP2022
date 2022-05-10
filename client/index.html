@@ -12,11 +12,17 @@
     <!--Applying a general style and a style specific to this page-->
     <link rel="stylesheet" href="./static/css/general.css" />
     <link rel="stylesheet" href="./static/css/styles-home.css" />
+   
 </head>
 
 <body>
     <div class="menu-container">
         <header>ILLUSTREMOR</header>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
         <div class="link-container">
             <a href="./">Home</a>
             <div>|</div>
@@ -37,14 +43,29 @@
             <h1>WELCOME TO ILLUSTREMOR!</h1>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                An earthquake is the shaking of the surface of the Earth which can cause a sudden release
+                of energy in the lithosphere (Earth's outermost layer), creating seismic waves. Earthquakes can vary in size 
+                and range, they go from being so weak they may not be felt, to so strong and violent they can shake entire cities 
+                and cause destruction. We can measure the scale and severity of an earthquake by finding it's magnitude.
+                ILLUSTREMOR allows us to show and report recorded earthquakes and their relevant information like magnitude across the United
+                States. 
             </p>
         </div>
         <div class="image-container">
             <img src="./static/img/earthquake.jpeg" alt="Earthquake stock photo" />
         </div>
     </div>
+    <script>
+        const btn = document.getElementsByClassName("toggle-button")[0];
+        const links = document.getElementsByClassName("link-container")[0];
+        const menu = document.getElementsByClassName("menu-container")[0];
+  
+        btn.addEventListener("click", () => {
+          console.log("fired");
+          links.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+      </script>
 </body>
 
 </html>

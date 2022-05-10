@@ -15,6 +15,25 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 35px;
+}
+
+.toggle-button .bar {
+    height: 6px;
+    width: 50px;
+    background-color: black;
+    border-radius: 10px;
 }
 
 .link-container {
@@ -46,4 +65,57 @@ a:hover {
 
 a:active {
     color: cornflowerblue;
+}
+
+@media (max-width: 810px) {
+    .toggle-button{
+        display: flex;
+    }
+
+    header {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        
+    }
+    .link-container div {
+        display: none;
+    }
+
+    .link-container a {
+        text-align: center;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin: 0px;
+        height: 19px
+    }
+
+    .link-container a:hover {
+        background-color: #7c6d6c;
+        color: black;
+    }
+
+    .link-container {
+        margin-right: 0px;
+        display: none; 
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+        height: 400px;
+        bottom: -15px; 
+    }
+
+    .link-container.active {
+        display: flex;
+    }
+
+    .menu-container.active {
+        height: 372px;
+    }
+
+  
 }
